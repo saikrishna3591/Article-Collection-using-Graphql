@@ -1,0 +1,86 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: Int!
+  name: String!
+  email_Id: String!
+  password: String!
+}
+
+type Article {
+  title: String!
+  description: String!
+  approved: Boolean!
+}
+
+type Admin {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Query {
+  users: [User!]!
+  user(id: String!): User!
+  signout: User!
+  articles: [Article!]!
+  articlesByAuthorId: [Article!]!
+  articlesById(id: Float!): [Article!]!
+  approvedArticle: [Article!]!
+  unApprovedArticle: [Article!]!
+  admin(id: Int!): Admin!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  signin(signInInput: SigninInput!): User!
+  createArticle(createArticleInput: CreatArticleInput!): Article!
+  approveArticle(articleApproveInput: ArticleApproveInput!): Article!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: Int!): User!
+  createAdmin(createAdminInput: CreateAdminInput!): User!
+  updateAdmin(updateAdminInput: UpdateAdminInput!): Admin!
+  removeAdmin(id: Int!): Admin!
+}
+
+input CreateUserInput {
+  name: String!
+  email_Id: String!
+  password: String!
+}
+
+input SigninInput {
+  email_Id: String!
+  password: String!
+}
+
+input CreatArticleInput {
+  title: String!
+  description: String!
+}
+
+input ArticleApproveInput {
+  id: Float!
+  approved: Boolean!
+}
+
+input UpdateUserInput {
+  name: String
+  email_Id: String
+  password: String
+  id: Int!
+}
+
+input CreateAdminInput {
+  name: String!
+  email_Id: String!
+  password: String!
+}
+
+input UpdateAdminInput {
+  name: String
+  email_Id: String
+  password: String
+  id: Int!
+}
